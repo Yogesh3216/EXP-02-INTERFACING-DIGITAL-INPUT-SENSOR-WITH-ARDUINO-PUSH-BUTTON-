@@ -8,7 +8,9 @@ COMPONENTS REQUIRED:
 4.	USB Interfacing cable 
 5.	Jumper wires 
 6.	LED of choice 
-THEORY :
+
+
+## THEORY :
 Arduino UNO
  	  The Uno is a microcontroller board based on the ATmega328P. It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6 analog inputs, a 16 MHz quartz crystal, a USB connection, a power jack, an ICSP header and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started.
 	Technical specifications of Arduino UNO :
@@ -34,10 +36,12 @@ FIGURE-01
 
 
 
-FIGURE-02
-PROCEDURE 
- Open tinker cad account 
-1.	Select Arduino uno , bread board , digital input and digital output 
+FIGURE-02 
+
+
+## PROCEDURE 
+ 
+1.	Open tinker cad account,Select Arduino uno , bread board , digital input and digital output 
 2.	Connect the circuit as given in the figure 
 3.	Develop the program and compile it for any errors 
 4.	 .Execute the program 
@@ -50,7 +54,8 @@ PROCEDURE
 
 
 
-CIRCUIT DIAGRAM 
+## CIRCUIT DIAGRAM 
+
 
 
 
@@ -60,14 +65,37 @@ CIRCUIT DIAGRAM
 
 
 
+
+
+
+
+
+## PROGRAM 
+ ```
+ int ledpin=3;
+int pushbtn=2;
+int val=0;
+void setup()
+{
+  pinMode(ledpin, OUTPUT);
+  pinMode(pushbtn,INPUT);
+}
+
+void loop()
+{
+  val=digitalRead(pushbtn);
+  
+    if(val==HIGH)
+    {
+      digitalWrite(ledpin,LOW);
+    }
+    else
+      digitalWrite(ledpin,HIGH);
+  
+}
+```
+
 FIGURE -03
-
-
-
-
-
-PROGRAM 
- 
  
  
  
@@ -75,7 +103,14 @@ PROGRAM
 
 
 
-Output of the simulation :
 
-[My image](username.github.com/repository/img/image.jpg)
+## BEFORE SIMULATION :
+![image](https://user-images.githubusercontent.com/103016346/191807821-3dc7b9e9-4774-46d5-bf38-89bea49200cb.png) 
 
+## AFTER SIMULATION :
+![image](https://user-images.githubusercontent.com/103016346/191808097-3da55d6c-c132-4e77-825d-97010eaba412.png)
+
+
+
+## RESULT :
+Thus, we have interfaced a digital input (push button) and blink of LED upon activation.
